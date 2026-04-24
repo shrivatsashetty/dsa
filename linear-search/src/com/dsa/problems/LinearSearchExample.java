@@ -27,7 +27,7 @@ public class LinearSearchExample {
 
         // multiline string using text block in Java
         String resultText = """
-                The targetNum element: %d
+                The target element: %d
                 Occurs at index: %d
                 Withing the array: %s
                 """.formatted(targetNum, indexTarget, Arrays.toString(nums));

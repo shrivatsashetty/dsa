@@ -1,7 +1,5 @@
 package com.dsa.problems;
 
-import java.util.Arrays;
-
 public class SearchInString {
     static int linearSearchWithingString(String source, char target) {
 
@@ -24,7 +22,7 @@ public class SearchInString {
 
         // Multiline string using text block in Java
         String resultText = """
-                The targetChar element: '%c'
+                The target character: '%c'
                 Occurs at index: %d
                 Withing the String: "%s"
                 """.formatted(targetChar, indexTarget, sourceStr);
