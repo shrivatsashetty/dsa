@@ -3,7 +3,7 @@ package com.dsa.problems;
 public class EvenDigits {
     /* A method that returns the no of digits in an Integer
     * returns a non-negative integer denoting the no of digits in the given int number */
-    static int getNumDigits(int num) {
+    static int getDigitCount(int num) {
         // convert negative integers to positive
         if (num < 0) {
             num *= -1;
@@ -27,8 +27,8 @@ public class EvenDigits {
 
     /* A method to check of a number contains even no of digits
     * returns true if the no of digits contained in the number is true, false otherwise */
-    static boolean isEvenDigits(int num) {
-        return getNumDigits(num) % 2 == 0;
+    static boolean isDigitCountEven(int num) {
+        return getDigitCount(num) % 2 == 0;
     }
 
     public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class EvenDigits {
         int counter = 0;
 
         for (int num : nums) {
-            if (isEvenDigits(num)) {
+            if (isDigitCountEven(num)) {
                 counter++;
             }
         }
