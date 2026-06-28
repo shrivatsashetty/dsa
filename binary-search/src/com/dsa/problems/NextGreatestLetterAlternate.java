@@ -2,7 +2,7 @@
 /* This is a slightly different solution for the problem in `NextGreatestLetter.java`
  * This one makes use of Modulo operator to wrap the result and prevent ArrayIndexOutOfBounds exception
  * Even though the solution within `NextGreatestLetter.java` is simpler to understand & faster than this,
- * this solution is a bit more concise (and also looks cool :] ) */
+ * this solution is a bit more concise */
 
 package com.dsa.problems;
 
