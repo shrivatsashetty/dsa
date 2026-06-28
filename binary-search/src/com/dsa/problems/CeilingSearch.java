@@ -51,7 +51,7 @@ public class CeilingSearch {
 
     public static void main(String[] args) {
         int[] arr = {2, 3, 5, 9, 14, 16, 18};
-        int target = 18;
+        int target = -1;
         int targetIndex = ceilingBinarySearch(arr, target);
         System.out.println("Index of Target Element: " + targetIndex);
     }
