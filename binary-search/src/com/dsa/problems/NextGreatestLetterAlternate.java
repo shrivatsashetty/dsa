@@ -20,6 +20,7 @@ public class NextGreatestLetterAlternate {
             if ((letters[midIndex] > target)) {
                 endIndex = midIndex - 1;
             } else {
+                // condition when `arr[midIndex] <= target`
                 startIndex = midIndex + 1;
             }
         }
