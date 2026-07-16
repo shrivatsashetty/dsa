@@ -62,7 +62,7 @@ public class SearchInRotatedSortedArray {
         return arr[0] > arr[endIndex];
     }
 
-    /* A method to find the index of the pivot element */
+    /* A method to find the index of the pivot element of the rotated array */
     static int findPivotIndex(int[] arr) {
 
         int startIndex = 0;
@@ -76,8 +76,7 @@ public class SearchInRotatedSortedArray {
                 return midIndex;
             } else {
                 // condition when: arr[m] < arr[m + 1]
-                // condition: arr[m] == arr[m + 1] not possible,
-                // since all elements are unique
+                // condition: arr[m] == arr[m + 1] not possible, since all elements are unique
                 if (arr[midIndex] >= arr[0]) {
                     startIndex = midIndex + 1;
                 } else {
@@ -104,7 +103,7 @@ public class SearchInRotatedSortedArray {
                 /* If the target was not found in the first half of the rotated array,
                  * Return whatever result was found,
                  * by performing a Binary Search on the second half of the array */
-                return rangeBinarySearch(nums, target, pivotIndex, (nums.length - 1));
+                return rangeBinarySearch(nums, target, pivotIndex + 1, nums.length - 1);
             }
 
             return targetIndex;
@@ -116,8 +115,8 @@ public class SearchInRotatedSortedArray {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 3, 1 }; // this case if failing
-        int target = 1;
+        int[] arr = { 5, 7, 10, 2, 3, 1 };
+        int target = 10;
         int targetIndex = search(arr, target);
         System.out.println("Index of Target Element: " + targetIndex);
     }
