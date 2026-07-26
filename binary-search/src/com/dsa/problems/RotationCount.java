@@ -63,7 +63,8 @@ public class RotationCount {
         return -1;
     }
 
-    static int findKRotation(int arr[]) {
+    /* A utility method to find how many times the array was rotated */
+    static int findKRotation(int[] arr) {
 
         if(isArrayRotated(arr)) {
             return findPivotIndex(arr) + 1;
@@ -72,10 +73,22 @@ public class RotationCount {
         return 0;
     }
 
+    /* Method to find the minimum element in the roted array */
+    static int findMin(int[] nums) {
+        if (isArrayRotated(nums)) {
+            int pivotIndex = findPivotIndex(nums);
+            int minIndex = pivotIndex + 1;
+            return nums[minIndex];
+        }
+
+        // if the array is not rotated, the first element of the array itself will be the smallest element
+        return nums[0];
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 5, 7, 10, 2, 3, 1 };
-        int numRotations = findKRotation(arr);
-        System.out.println("No of Rotations: " + numRotations);
+        int[] arr = {11,13,15,17};
+        int numRotations = findMin(arr);
+        System.out.println("Smallest Element: " + numRotations);
     }
 
 }
