@@ -2,7 +2,7 @@ package com.dsa.algorithm;
 
 public class BinarySearch {
 
-    static int binarySearch(int[] arr, int target) {
+    public static int binarySearch(int[] arr, int target) {
 
         int startIndex = 0;
         int endIndex = arr.length - 1;

@@ -28,11 +28,11 @@ public class SaddlebackSearch {
                 return new int[]{i, j};
             }
             else if (matrix[i][j] > target) {
-                j  = j - 1;
+                j--;
             }
             else {
                 // case when matrix[i][j] < target
-                i = i + 1;
+                i++;
             }
         }
 
