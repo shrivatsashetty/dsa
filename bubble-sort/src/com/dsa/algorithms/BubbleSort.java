@@ -10,9 +10,9 @@ public class BubbleSort {
     }
 
     static void bubbleSort(int [] arr) {
-        int indexEnd = arr.length - 1; // corresponds to the index of last element, it's where we start
+        int indexEnd = arr.length - 1; // corresponds to the index of last element
         boolean swapped = true;
-        while (swapped && indexEnd > 0) {
+        while (indexEnd > 0) {
             swapped = false;
             for(int i = 0; i < indexEnd; i++ ) {
                 if(arr[i] > arr[i + 1]) {
@@ -20,12 +20,17 @@ public class BubbleSort {
                     swapped = true;
                 }
             }
+            // premature termination of the loop if the array reaches a sorted state to prevent unwanted iterations.
+            if (!swapped) {
+                break;
+            }
+
             indexEnd--;
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = {5, 1, 4, 8, 2};
+        int[] arr = {5, 1, 0, -4, 8, 2};
         System.out.println("Initial Array: " + Arrays.toString(arr));
         bubbleSort(arr);
         System.out.println("After Sorting: " + Arrays.toString(arr));
