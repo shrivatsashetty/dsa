@@ -8,12 +8,12 @@ import java.util.Arrays;
 
 public class SearchInMatrix {
 
-    static int[] mapIndexToCoordinates(int index, int numRows, int numCols) {
+    static int[] mapIndexToCoordinates(int index, int numCols) {
         if(index <= 0) {
             return new int[]{0,0};
         }
         else {
-            int indexRow = index/numRows;
+            int indexRow = index/numCols;
             int indexCol = index % numCols;
             return new int[]{indexRow, indexCol};
         }
@@ -42,7 +42,7 @@ public class SearchInMatrix {
         int[] flattenedArray = flattenArray(matrix);
 
         int targetIndex = BinarySearch.binarySearch(flattenedArray, target);
-        return mapIndexToCoordinates(targetIndex, matrix.length, matrix[0].length);
+        return mapIndexToCoordinates(targetIndex, matrix[0].length);
     }
 
     public static void main(String[] args) {
