@@ -12,9 +12,9 @@ public class DuplicateNumber {
     static void cyclicSort(int[] arr) {
         int i = 0;
         while(i < arr.length) {
-            /* If the current element is equal to the index, it's in position. Hence, we move on
-             * If the current element is greater than or equal to length of array,
-             * it's proper index is out of bounds, hence we simply move on to the next element */
+            /* If the current element = currentIndex + 1, it's in position. Hence, we move on
+             * If the current element is not is position, but it's correct position is already occupied with the
+             * same element (duplicate), then we move on to next element */
             if((arr[i] != i+1) && (arr[arr[i] - 1] != arr[i])) {
                 swapArrayElements(arr, i, arr[i] - 1);
             }
@@ -33,7 +33,7 @@ public class DuplicateNumber {
 
     public static void main(String[] args) {
         /* The array elements should be consecutive numbers */
-        int[] nums = {3,3,3,3,3};
+        int[] nums = {1, 3, 2, 2, 4};
         System.out.println("Given Array: " + Arrays.toString(nums));
         int duplicateNum = findDuplicate(nums);
         System.out.println("Duplicate Number: " + duplicateNum);

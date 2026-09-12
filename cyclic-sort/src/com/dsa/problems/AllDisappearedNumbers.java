@@ -15,9 +15,9 @@ public class AllDisappearedNumbers {
     static void cyclicSort(int[] arr) {
         int i = 0;
         while(i < arr.length) {
-            /* If the current element is equal to the index, it's in position. Hence, we move on
-             * If the current element is greater than or equal to length of array,
-             * it's proper index is out of bounds, hence we simply move on to the next element */
+            /* If the current element = currentIndex + 1, it's in position. Hence, we move on
+             * If the current element is not is position, but it's correct position is already occupied with the
+             * same element (duplicate), then we move on to next element */
             if((arr[i] != i+1) && (arr[arr[i] - 1] != arr[i])) {
                 swapArrayElements(arr, i, arr[i] - 1);
             }
