@@ -1,8 +1,11 @@
 package com.dsa.problems;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-public class DuplicateNumber {
+public class FindAllDuplicates {
+
     static void swapArrayElements(int[] arr, int sourceIndex, int targetIndex) {
         int buffer = arr[sourceIndex];
         arr[sourceIndex] = arr[targetIndex];
@@ -24,19 +27,24 @@ public class DuplicateNumber {
         }
     }
 
-    static int findDuplicate(int[] nums) {
+    /* Made public to match signature of function as per Leet-code problem */
+    static List<Integer> findDuplicates(int[] nums) {
+        List<Integer> missingNums = new ArrayList<>();
         int N = nums.length;
         cyclicSort(nums);
-        // After the Cyclic Sort finishes, the duplicate number will have shifted to the last index of the array
-        return nums[N - 1];
+        for (int i = 0; i < N; i++) {
+            if (nums[i] != i+1) {
+                missingNums.add(nums[i]);
+            }
+        }
+        return missingNums;
     }
 
     public static void main(String[] args) {
-        /* The array elements should be consecutive numbers */
-        int[] nums = {1, 3, 2, 2, 4};
+        int[] nums = {4,3,2,7,8,2,3,1};
         System.out.println("Given Array: " + Arrays.toString(nums));
-        int duplicateNum = findDuplicate(nums);
-        System.out.println("Duplicate Number: " + duplicateNum);
+        List<Integer> missingNumbers = findDuplicates(nums);
+        System.out.println("Missing Number: " + missingNumbers);
     }
 
 }
