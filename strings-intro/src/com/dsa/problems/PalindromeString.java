@@ -2,6 +2,7 @@ package com.dsa.problems;
 
 public class PalindromeString {
     static boolean isStringPalindrome(String str) {
+        str = str.toLowerCase();
         int idxStart = 0;
         int idxEnd = str.length() - 1;
 
